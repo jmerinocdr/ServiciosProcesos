@@ -47,7 +47,7 @@ public class Proceso extends Thread{
 		}
 		System.out.println("Proceso "+num+" termino de ejecutar");
 		procesofin.release();
-		System.out.println("Hamster "+num+" Siguiente proceso");
+		System.out.println("Proceso "+num+" Siguiente proceso");
 		
 	}
 	
