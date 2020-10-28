@@ -5,15 +5,15 @@ import java.util.concurrent.Semaphore;
 public class MainEjercicio4Semaforos {
 
 	public static void main(String[] args) {
-		int[] palillos=new int[5];
-		Semaphore escritoraPalillos=new Semaphore(1);
-		Semaphore[] S=new Semaphore[5]; 
+		Palillo[] palillos=new Palillo[5];
+		Semaphore[] palillo=new Semaphore[5]; 
 		for(int i=0; i<5; i++) {
-			S[i]=new Semaphore(0);
+			palillos[i]=new Palillo(i);
+			palillo[i]=new Semaphore(1);
 		}
 		
 		for(int i=0; i<5; i++) {
-			Filosofo filosofo=new Filosofo(S[i], S[(i++)%5], i, palillos);
+			Filosofo filosofo=new Filosofo(palillo[i], palillo[(i++)%5], i, palillos[i], palillos[(i++)%5]);
 			filosofo.start();
 		}
 
