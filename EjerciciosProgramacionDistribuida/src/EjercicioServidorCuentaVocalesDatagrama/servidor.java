@@ -1,4 +1,4 @@
-package EjercicioServidorCuentaConsonantesDatagrama.copy.copy;
+package EjercicioServidorCuentaVocalesDatagrama;
 
 //import java.lang.* ; 
 import java.io.* ;
@@ -14,7 +14,6 @@ public class servidor
 	byte brecv[] = new byte[100];
 	byte bsend[] = new byte[100];
 	String cadenaRecibida="";
-	int consonantesCadena=0;
 	int vocalesCadena=0;
 		try {
 			s = new DatagramSocket(2500);
@@ -36,11 +35,10 @@ public class servidor
 						vocalesCadena++;
 					}
 				}
-				consonantesCadena=cadenaRecibida.length()-vocalesCadena;
 				
 				ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				DataOutputStream dos = new DataOutputStream(baos);
-				dos.writeInt(consonantesCadena);
+				dos.writeInt(vocalesCadena);
 				bsend = baos.toByteArray();
 				out = new DatagramPacket ( bsend,
 				bsend.length,client_addr,

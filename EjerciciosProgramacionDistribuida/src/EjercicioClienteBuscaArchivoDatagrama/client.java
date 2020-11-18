@@ -1,4 +1,4 @@
-package EjercicioClienteCuentaConsonantesDatagrama.copy.copy;
+package EjercicioClienteBuscaArchivoDatagrama;
 
 //import java.lang.* ; 
 import java.io.* ;
@@ -24,7 +24,7 @@ public class client{
 		Scanner teclado = new Scanner (System.in);
 		System.out.println("Introduce el host: ");
 		host = teclado.nextLine ();
-		System.out.println("Introduce la cadena: ");
+		System.out.println("Introduce el archivo a guardar: ");
 		cadenaEnviar = teclado.nextLine ();
 		teclado.close();
 		
@@ -53,7 +53,13 @@ public class client{
 			ByteArrayInputStream bais = new ByteArrayInputStream(brecv) ;
 			DataInputStream dis = new DataInputStream(bais);
 			vocalesCadena = dis.readInt();
-			System.out.println("Datos recibidos " + vocalesCadena);
+			if(vocalesCadena==1) {
+				System.out.println("Archivo "+cadenaEnviar+" encontrado");
+			}
+			else {
+				System.out.println("Archivo "+cadenaEnviar+" no encontrado");
+			}
+			
 		}
 		catch (Exception e) {
 			System.err.println("<<<<<excepcion " + e.toString() );

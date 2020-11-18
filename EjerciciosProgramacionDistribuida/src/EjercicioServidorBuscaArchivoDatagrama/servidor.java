@@ -1,4 +1,4 @@
-package EjercicioServidorBuscaArchivoDatagrama.copy;
+package EjercicioServidorBuscaArchivoDatagrama;
 
 //import java.lang.* ; 
 import java.io.* ;
@@ -34,9 +34,9 @@ public class servidor
 				ObjectInputStream dis = new ObjectInputStream(bais);
 				cadenaRecibida = (String) dis.readObject();
 				
+				String directorio = "D:\\Jaime\\Documents\\Eclipse-workspace\\ServiciosProcesos\\EjerciciosProgramacionDistribuida\\src\\EjercicioServidorBuscaArchivoDatagrama\\datos";
 				
-				
-				if(encontrarArchivo(cadenaRecibida, "/datos")==true) {
+				if(encontrarArchivo(cadenaRecibida, directorio)==true) {
 					encontrado=1;
 				}
 				
