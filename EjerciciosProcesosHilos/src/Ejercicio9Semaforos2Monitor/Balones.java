@@ -31,6 +31,7 @@ public class Balones {
 		System.out.println("Balon "+this.getName()+" se ha cogido");
 		notifyAll();
 	}
+	
 	public synchronized void soltarBalon() {
 		while(this.estado==false) {
 			try {
