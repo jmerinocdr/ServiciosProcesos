@@ -6,6 +6,7 @@ import java.net.* ;
 //import java.util.* ;
 public class servidor
 {
+	@SuppressWarnings("resource")
 	public static void main ( String [] args)
 	{
 		ServerSocket serverAddr = null;
