@@ -20,17 +20,17 @@ public class Sensor extends Thread{
 		this.i = i;
 	}
 	
-	private Contador getContador() {
-		return contador;
-	}
+//	private Contador getContador() {
+//		return contador;
+//	}
 
 	private void setContador(Contador contador) {
 		this.contador = contador;
 	}
 
-	private Semaphore getscontador() {
-		return scontador;
-	}
+//	private Semaphore getscontador() {
+//		return scontador;
+//	}
 	private void setscontador(Semaphore scontador) {
 		this.scontador = scontador;
 	}

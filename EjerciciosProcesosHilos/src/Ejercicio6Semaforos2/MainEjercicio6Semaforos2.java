@@ -4,6 +4,7 @@ import java.util.concurrent.Semaphore;
 
 public class MainEjercicio6Semaforos2 {
 	public static void main(String args[]) {
+		
 		Semaphore smedico=new Semaphore(20);
 		Semaphore sescayola=new Semaphore(6);
 		Semaphore srayos=new Semaphore(1);
