@@ -1,0 +1,16 @@
+El programa se bloquearía al esperar la señal de s2 en la línea 5 del Proceso1,
+ya que el Proceso2 en la línea 7, ya generó una señal s2 que fué adquirida en la
+línea 3 del Proceso1.
+
+Para que el programa no se bloquee, se deberían generar dos señales s2 en el Proceso2
+
+La salida debería ser:
+1-A1
+2-B1
+3-B2
+4-B3
+5-A2
+6-BLOQUEO
+
+(El orden de inicio de los hilos no está establecido, el orden establecido empieza con el paso 3)
+El valor final de todos los semáforos es 0
