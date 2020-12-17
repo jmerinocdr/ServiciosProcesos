@@ -75,15 +75,17 @@ public class servidor
 	public static String palabraAleatoria() throws IOException
     {
 		String palabra="";
+		String ruta="src\\EjercicioServidorAhorcadoStream\\archivos\\palabras.txt";
 		ArrayList<String> filas=new ArrayList<String>();
-		String filePath = new File("").getAbsolutePath();
-		filePath.concat("\\archivos\\\\palabras.txt");
-		File archivo=new File(filePath);
+		//String filePath = new File("").getAbsolutePath();
+		//filePath.concat(ruta);
+		File archivo=new File(ruta);
 		if(archivo.exists()) {
 			System.out.println("El archivo existe");
-			BufferedReader reader = new BufferedReader(new FileReader(archivo));
-			String linea=reader.readLine();
-			while (linea != null)
+			FileReader archivol = new FileReader(ruta);
+			BufferedReader reader = new BufferedReader(archivol);
+			String linea;
+			while ((linea = reader.readLine()) != null)
 			{
 			   filas.add(linea);
 			}
