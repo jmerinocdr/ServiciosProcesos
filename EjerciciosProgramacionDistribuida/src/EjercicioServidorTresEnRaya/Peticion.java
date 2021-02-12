@@ -2,6 +2,7 @@ package EjercicioServidorTresEnRaya;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 import EjercicioClienteTresEnRaya.Data;
@@ -31,6 +32,10 @@ public class Peticion implements Runnable{
 					+ "\n"+tabla[0][0]+"|"+tabla[0][0]+"|"+tabla[0][0]
 					+ "\n"+tabla[0][0]+"|"+tabla[0][0]+"|"+tabla[0][0]
 					+ "\n -----------------------------------------------");
+			Socket sco=new Socket("Unknow-PC", 2600);
+			ObjectOutputStream ostream=new ObjectOutputStream(sco.getOutputStream());
+			ostream.writeObject(data);
+			sco.close();
 		} catch (IOException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
