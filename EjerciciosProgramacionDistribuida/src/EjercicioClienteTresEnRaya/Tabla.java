@@ -8,7 +8,7 @@ public class Tabla {
 	public String[][] getTabla() {
 		return tabla;
 	}
-	private void setTabla(String[][] tabla) {
+	public void setTabla(String[][] tabla) {
 		this.tabla = tabla;
 	}
 	public void anadirTabla(int x, int y, String simbolo) {

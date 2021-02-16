@@ -27,15 +27,17 @@ public class Peticion implements Runnable{
 			nombre=data.getNombre();
 			ip=data.getIp();
 			tabla=data.getTabla();
+			
 			System.out.println("Registrado "+nombre+" envía a "+ip+":"
-					+ "\n"+tabla[0][0]+"|"+tabla[0][0]+"|"+tabla[0][0]
-					+ "\n"+tabla[0][0]+"|"+tabla[0][0]+"|"+tabla[0][0]
-					+ "\n"+tabla[0][0]+"|"+tabla[0][0]+"|"+tabla[0][0]
+					+ "\n"+tabla[0][0]+"|"+tabla[0][1]+"|"+tabla[0][2]
+					+ "\n"+tabla[1][0]+"|"+tabla[1][1]+"|"+tabla[1][2]
+					+ "\n"+tabla[2][0]+"|"+tabla[2][1]+"|"+tabla[2][2]
 					+ "\n -----------------------------------------------");
-			Socket sco=new Socket("Unknow-PC", 2600);
+			Socket sco=new Socket(ip, 2600);
 			ObjectOutputStream ostream=new ObjectOutputStream(sco.getOutputStream());
 			ostream.writeObject(data);
 			sco.close();
+			sc.close();
 		} catch (IOException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

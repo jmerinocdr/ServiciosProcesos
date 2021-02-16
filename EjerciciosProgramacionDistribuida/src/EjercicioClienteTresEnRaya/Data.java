@@ -6,6 +6,7 @@ public class Data implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private String nombre, ip;
 	private String[][] tabla;
+	private String str;
 		
 	public String getNombre() {
 		return nombre;
@@ -25,4 +26,11 @@ public class Data implements Serializable{
 	public void setTabla(String[][] tabla) {
 		this.tabla = tabla;
 	}
+	public String getStr() {
+		return str;
+	}
+	public void setStr(String str) {
+		this.str = str;
+	}
+	
 }
