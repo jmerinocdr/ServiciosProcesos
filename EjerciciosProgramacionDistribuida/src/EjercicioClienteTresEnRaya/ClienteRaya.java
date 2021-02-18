@@ -47,7 +47,7 @@ public class ClienteRaya {
 		Escucha escucha=new Escucha();
 		escucha.run();
 		
-		
+		System.out.println("ENTRA EL HILO DE LA INTERFAZ");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -64,6 +64,7 @@ public class ClienteRaya {
 	 * Create the application.
 	 */
 	public ClienteRaya() {
+		System.out.println("Se crea CLIENTE RAYA");
 		initialize();
 	}
 
@@ -99,7 +100,7 @@ public class ClienteRaya {
 		this.btn00 = new JButton(" ");
 		this.btn00.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabla.anadirTabla(0,0,getSymb());
+				anadirTabla(0,0);
 				btno00.setText(getSymb()); 
 			}
 		});
@@ -108,7 +109,7 @@ public class ClienteRaya {
 		this.btn01 = new JButton(" ");
 		this.btn01.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabla.anadirTabla(0,1,getSymb());
+				anadirTabla(0,1);
 				btn01.setText(getSymb());
 			}
 		});
@@ -117,7 +118,7 @@ public class ClienteRaya {
 		this. btn02 = new JButton(" ");
 		this.btn02.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabla.anadirTabla(0,2,getSymb());
+				anadirTabla(0,2);
 				btn02.setText(getSymb());
 			}
 
@@ -130,7 +131,7 @@ public class ClienteRaya {
 		this.btn10 = new JButton(" ");
 		this.btn10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabla.anadirTabla(1,0,getSymb());
+				anadirTabla(1,0);
 				btn10.setText(getSymb());
 			}
 		});
@@ -139,7 +140,7 @@ public class ClienteRaya {
 		this.btn11 = new JButton(" ");
 		this.btn11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabla.anadirTabla(1,1,getSymb());
+				anadirTabla(1,1);
 				btn11.setText(getSymb());
 			}
 		});
@@ -148,7 +149,7 @@ public class ClienteRaya {
 		this.btn12 = new JButton(" ");
 		this.btn12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabla.anadirTabla(1,2,getSymb());
+				anadirTabla(1,2);
 				btn12.setText(getSymb());
 			}
 		});
@@ -160,7 +161,7 @@ public class ClienteRaya {
 		this.btn20 = new JButton(" ");
 		this.btn20.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabla.anadirTabla(2,0,getSymb());
+				anadirTabla(2,0);
 				btn20.setText(getSymb());
 			}
 		});
@@ -169,7 +170,7 @@ public class ClienteRaya {
 		this.btn21 = new JButton(" ");
 		this.btn21.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabla.anadirTabla(2,1,getSymb());
+				anadirTabla(2,1);
 				btn21.setText(getSymb());
 			}
 		});
@@ -178,7 +179,7 @@ public class ClienteRaya {
 		this.btn22 = new JButton(" ");
 		this.btn22.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabla.anadirTabla(2,2,getSymb());
+				anadirTabla(2,2);
 				btn22.setText(getSymb());
 			}
 		});
@@ -193,6 +194,11 @@ public class ClienteRaya {
 			
 		});
 		panel.add(Send);
+	}
+	private void anadirTabla(int x, int y) {
+		mostrarTabla();
+		this.tabla.anadirTabla(x, y, this.getSymb());
+		mostrarTabla();
 	}
 	private void sendData() {
 		System.out.println("Entramos al sendData");
@@ -262,6 +268,13 @@ public class ClienteRaya {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	private void mostrarTabla() {
+		System.out.println("Tabla: "
+				+ "\n"+this.tabla.getTabla()[0][0]+"|"+this.tabla.getTabla()[0][1]+"|"+this.tabla.getTabla()[0][2]
+				+ "\n"+this.tabla.getTabla()[1][0]+"|"+this.tabla.getTabla()[1][1]+"|"+this.tabla.getTabla()[1][2]
+				+ "\n"+this.tabla.getTabla()[2][0]+"|"+this.tabla.getTabla()[2][1]+"|"+this.tabla.getTabla()[2][2]
+				+ "\n -----------------------------------------------");
 	}
 
 }

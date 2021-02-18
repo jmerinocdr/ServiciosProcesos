@@ -7,6 +7,7 @@ import java.net.Socket;
 
 import EjercicioClienteTresEnRaya.Data;
 
+
 public class Peticion implements Runnable{
 	private String nombre;
 	private String ip;

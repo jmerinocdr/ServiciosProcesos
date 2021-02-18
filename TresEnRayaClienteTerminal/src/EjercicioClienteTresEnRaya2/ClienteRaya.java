@@ -6,6 +6,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 
+
 public class ClienteRaya {
 
 	private String Nombre;
