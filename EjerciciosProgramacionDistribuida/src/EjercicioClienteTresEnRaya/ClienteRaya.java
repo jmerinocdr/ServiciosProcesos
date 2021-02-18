@@ -101,7 +101,7 @@ public class ClienteRaya {
 		this.btn00.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				anadirTabla(0,0);
-				btno00.setText(getSymb()); 
+				btn00.setText(getSymb()); 
 			}
 		});
 		panel.add(this.btn00);
@@ -205,7 +205,7 @@ public class ClienteRaya {
 		try {
 			System.out.println("Creamos socket");
 			sleep(1000);
-			Socket sc=new Socket("Unknow-PC", 2500);
+			Socket sc=new Socket("172.28.254.150", 2500);
 			System.out.println("Creamos data");
 			sleep(1000);
 			Data datos=new Data();
