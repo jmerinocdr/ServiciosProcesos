@@ -195,11 +195,17 @@ public class ClienteRaya {
 		});
 		panel.add(Send);
 	}
+	
+	
+	//Método para añadir valores en la tabla
 	private void anadirTabla(int x, int y) {
 		mostrarTabla();
 		this.tabla.anadirTabla(x, y, this.getSymb());
 		mostrarTabla();
 	}
+	
+	
+	//Método para enviar los datos de la tabla
 	private void sendData() {
 		System.out.println("Entramos al sendData");
 		try {
@@ -232,6 +238,9 @@ public class ClienteRaya {
 			e1.printStackTrace();
 		}
 	}
+	
+	
+	//Método para guardar los datos que se han recibido
 	public void setData(Data data) {
 		String[][] stabla = data.getTabla();
 		System.out.println("El symb vale "+getSymb()+" y data recibida vale "+data.getStr());
@@ -249,6 +258,9 @@ public class ClienteRaya {
 				+ "\n -----------------------------------------------");
 		updateUITabla(stabla);
 	}
+	
+	
+	//Método para actualizar el texto de la tabla
 	private void updateUITabla(String[][] stabla) {
 		System.out.println("Establecemos el valor de los BTN");
 		this.btn00.setText(stabla[0][0]);
@@ -261,6 +273,9 @@ public class ClienteRaya {
 		this.btn21.setText(stabla[2][1]);
 		this.btn22.setText(stabla[2][2]);
 	}
+	
+	
+	//Método para realizar una espera
 	private void sleep(int i) {
 		try {
 			Thread.sleep(i);
@@ -269,6 +284,9 @@ public class ClienteRaya {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	//Método para mostrar los valores de la tabla actual
 	private void mostrarTabla() {
 		System.out.println("Tabla: "
 				+ "\n"+this.tabla.getTabla()[0][0]+"|"+this.tabla.getTabla()[0][1]+"|"+this.tabla.getTabla()[0][2]
