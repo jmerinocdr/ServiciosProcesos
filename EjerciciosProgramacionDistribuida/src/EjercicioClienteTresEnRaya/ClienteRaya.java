@@ -44,20 +44,23 @@ public class ClienteRaya {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		Escucha escucha=new Escucha();
-		escucha.run();
 		
+		ClienteRaya window = new ClienteRaya();
+		Escucha escucha=new Escucha();
+		escucha.run(window);
 		System.out.println("ENTRA EL HILO DE LA INTERFAZ");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ClienteRaya window = new ClienteRaya();
+					System.out.println("Establece el ");
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
+			
 		});
+		
 	}
 
 	/**
@@ -211,7 +214,7 @@ public class ClienteRaya {
 		try {
 			System.out.println("Creamos socket");
 			sleep(1000);
-			Socket sc=new Socket("172.28.254.150", 2500);
+			Socket sc=new Socket("Unknow-PC", 2500);
 			System.out.println("Creamos data");
 			sleep(1000);
 			Data datos=new Data();
