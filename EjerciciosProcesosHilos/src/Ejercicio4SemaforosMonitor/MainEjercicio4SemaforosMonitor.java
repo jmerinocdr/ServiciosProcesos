@@ -11,6 +11,7 @@ public class MainEjercicio4SemaforosMonitor {
 		for(int i=0; i<5; i++) {
 			Filosofo filosofo=new Filosofo(i, palillos);
 			filosofo.run();
+			System.out.println("Hola");
 		}
 	}
 
